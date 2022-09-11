@@ -23,12 +23,3 @@ db.mycollection.createIndex({user_id:1});
 -rw-------  1 pdepretz  staff   3.2M 23 Aug 16:59 collection-11--6826627282363647811.wt
 -rw-------  1 pdepretz  staff    12K 23 Aug 17:03 collection-11--6826627282363647811.wt
 */
-
-//we add a bunch of metadata 
-//Conclusion
-//a delete is more expansive than a write: (we need to write more pages) which has two impacts on disk:
-//-takes more storage space
-//-more disk usage (IOPS, longer util, ...)
-//a file will be truncated:
-//  automatically when we delete the last blocks of a file
-//  through the compact command because it will optimise the file to create empty blocks at the end
